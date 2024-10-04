@@ -1,4 +1,3 @@
-# Global Conversion Factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 FREEZING_POINT_OFFSET = 32  # Freezing point of water in Fahrenheit
@@ -14,10 +13,10 @@ def convert_to_fahrenheit(celsius):
 # User Interaction
 def temperature_conversion():
     try:
-        temp = float(input("Enter the temperature to convert: "))
+        temp = float(input("Enter the temperature to convert: "))  # Input validation for numeric temperature
     except ValueError:
         print("Invalid temperature. Please enter a numeric value.")
-        return
+        return  # Exit if input is invalid
 
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
@@ -32,4 +31,3 @@ def temperature_conversion():
 
 if __name__ == "__main__":
     temperature_conversion()
-
