@@ -25,4 +25,31 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        # Return a string representation of the 
+        # Return a string representation of the PrintBook
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+class Library:
+    def __init__(self):
+        # Initialize an empty list to hold books in the library
+        self.books = [] 
+
+    def add_book(self, book):
+        # Add a book to the library
+        self.books.append(book)
+
+    def list_books(self):
+        # Print the details of all books in the library
+        for book in self.books:
+            print(book)
+
+# Example usage
+if __name__ == "__main__":
+    lib = Library()
+    book1 = PrintBook("1984", "George Orwell", 328)
+    book2 = EBook("Python Programming", "John Doe", 15)
+
+    lib.add_book(book1)
+    lib.add_book(book2)
+    
+    print("Books in the library:")
+    lib.list_books()
